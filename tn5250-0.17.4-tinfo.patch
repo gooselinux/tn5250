@@ -1,0 +1,24 @@
+diff -up tn5250-0.17.4/curses/Makefile.am.linker tn5250-0.17.4/curses/Makefile.am
+--- tn5250-0.17.4/curses/Makefile.am.linker	2010-02-26 21:33:01.000000000 +0100
++++ tn5250-0.17.4/curses/Makefile.am	2010-02-26 21:35:43.000000000 +0100
+@@ -8,7 +8,7 @@ tn5250_SOURCES = 	cursesterm.c tn5250.c
+ 
+ tn5250_CFLAGS = -DUSE_CURSES $(AM_CFLAGS)
+ 
+-tn5250_LDFLAGS = $(CURSES_LIB)
++tn5250_LDFLAGS = $(CURSES_LIB) -ltinfo
+ 
+ pkginclude_HEADERS = 	cursesterm.h
+ 
+diff -up tn5250-0.17.4/curses/Makefile.in.linker tn5250-0.17.4/curses/Makefile.in
+--- tn5250-0.17.4/curses/Makefile.in.linker	2010-02-26 21:33:13.000000000 +0100
++++ tn5250-0.17.4/curses/Makefile.in	2010-02-26 21:36:36.000000000 +0100
+@@ -115,7 +115,7 @@ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ -ltinfo
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+ LIBTOOL = @LIBTOOL@
